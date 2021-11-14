@@ -1,0 +1,24 @@
+.game-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.active-player,
+.wait-player {
+  margin: 10px 80px;
+  font-size: 100px;
+  font-weight: 800;
+  padding: 5px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.active-player {
+  border: rgb(21, 112, 108) 10px solid;
+}
+
+.wait-player {
+  border: transparent 10px solid;
+}
