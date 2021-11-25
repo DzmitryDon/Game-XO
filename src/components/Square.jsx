@@ -3,14 +3,15 @@ import React from "react";
 import "../styleslist/Square.css";
 
 export const Square = (props) => {
-  const handleClick = async (index) => {
+  const handleClick = (index) => {
     if (props.checkBoard(index)) {
       if (props.isX === false) {
-        await props.updateGame(index, "0");
+        props.updateGameSquare(index, "0");
       } else {
-        await props.updateGame(index, "X");
+        props.updateGameSquare(index, "X");
       }
-
+      console.log("В квадрате");
+      console.log(props.gameSquare);
       props.checkWinner();
     }
   };
@@ -18,7 +19,9 @@ export const Square = (props) => {
   return (
     <div className="square-div" onClick={() => handleClick(props.boxIndex)}>
       <span className="square-value-text">
-        {props.game[props.boxIndex] === null ? "*" : props.game[props.boxIndex]}
+        {props.gameSquare[props.boxIndex] === null
+          ? "*"
+          : props.gameSquare[props.boxIndex]}
       </span>
     </div>
   );

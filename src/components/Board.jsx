@@ -5,16 +5,18 @@ import "../styleslist/Board.css";
 
 export const Board = (props) => {
   let CounterIndex = -1;
-  const makeSquares = props.game.map(() => {
+  console.log("Передан Пропс");
+  console.log(props.gameBoard);
+  const makeSquares = props.gameBoard.map(() => {
     CounterIndex++;
-
     return (
       <Square
+        key={CounterIndex}
         boxIndex={CounterIndex}
         checkBoard={props.checkBoard}
         isX={props.isX}
-        updateGame={props.updateGame}
-        game={props.game}
+        updateGameSquare={props.updateGameBoard}
+        gameSquare={props.gameBoard}
         checkWinner={props.checkWinner}
       />
     );
