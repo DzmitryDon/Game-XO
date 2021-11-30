@@ -1,26 +1,12 @@
 import React from "react";
-import { Square } from "./Square";
+import { Square } from "./Square.jsx";
 
 import "../styleslist/Board.css";
 
-export const Board = (props) => {
-  let CounterIndex = -1;
-  console.log("Передан Пропс");
-  console.log(props.gameBoard);
-  const makeSquares = props.gameBoard.map(() => {
-    CounterIndex++;
-    return (
-      <Square
-        key={CounterIndex}
-        boxIndex={CounterIndex}
-        checkBoard={props.checkBoard}
-        isX={props.isX}
-        updateGameSquare={props.updateGameBoard}
-        gameSquare={props.gameBoard}
-        checkWinner={props.checkWinner}
-      />
-    );
-  });
-
-  return <div className="board-div">{makeSquares}</div>;
-};
+export const Board = ({ onClick, squares }) => (
+  <div className="board-div">
+    {squares.map((square, i) => (
+      <Square key={i} onClick={() => onClick(i)} value={square} />
+    ))}
+  </div>
+);
