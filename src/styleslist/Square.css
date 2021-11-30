@@ -1,8 +1,8 @@
 .square-div {
-  background-color: rgb(194, 247, 229);
+  background-color: rgb(155, 183, 236);
   width: 200px;
   height: 200px;
-  border: rgb(21, 112, 108) 10px solid;
+  border: rgb(50, 94, 158) 10px solid;
   display: flex;
   align-items: center;
   justify-content: center;
